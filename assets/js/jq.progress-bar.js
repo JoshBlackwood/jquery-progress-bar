@@ -24,7 +24,7 @@
 
 		options = $.extend(defaults, options);
 
-		var markup = '<!-- Progress Bar --><div class="navbar navbar-default navbar-fixed-'+ options.position +'" id="progress-bar-wrap"><div class="container"><h4>Completion Progress <small class="encouragement"></small><button type="button" class="close" data-dismiss="progress-bar" aria-hidden="true" title="Collapse"><span class="sr-only">Collapse</span></button></h4><div class="progress"><div id="form-progress" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"><span class="">0% Complete</span></div></div></div></div> <!-- /progress bar -->';
+		var markup = '<!-- Progress Bar --><div class="navbar navbar-default navbar-fixed-'+ options.position +'" id="progress-bar-wrap"><div class="container"><h4>Completion Progress <small class="encouragement"></small><button type="button" class="close" data-dismiss="progress-bar" aria-hidden="true" title="Collapse"><span class="sr-only">Collapse</span></button></h4><div class="progress"><div id="form-progress" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"><span class="sr-only">0% Complete</span></div></div></div></div> <!-- /progress bar -->';
 
 		$('body').append(markup);
 
