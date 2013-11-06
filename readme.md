@@ -1,6 +1,6 @@
 ##jQuery Progress Bar
 
-A simple jQuery progress bar plugin for Bootstrap forms. Please give it a try below.
+A simple jQuery progress bar plugin for Bootstrap forms. Please give it a try with the demo.html page.
 
 * Progress bar only advances when a required (can be HTML5 ``required`` attribute or a CSS class of ``.required``) field gains a value
 * User-declarable progress messages. When calling the script, set breakpoints and messages in JSON format 
