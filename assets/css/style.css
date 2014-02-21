@@ -6,6 +6,13 @@ fieldset fieldset legend {
 	font-size: 1.25em;
 }
 
+fieldset fieldset fieldset legend {
+	font-size: 1em;
+	font-weight: bold;
+	border-bottom: none;
+	margin-bottom: 5px;
+}
+
 .row legend {
 	margin-left: 15px;
 }

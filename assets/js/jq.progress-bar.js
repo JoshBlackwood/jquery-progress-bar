@@ -1,11 +1,11 @@
 /*
 	jQuery Plugin
 	Name: Collapsible Progress Bar
-	Version: 0.8
+	Version: 0.9
 	Description: Uses Twitter Bootstrap 3.0 styling to present an accessible, simple progress bar for a web form, with customizable messages of encouragement.
 	Dependencies: Bootstrap 3.0 (http://getbootstrap.com/), Font Awesome 4.0.3 (http://fortawesome.github.io/Font-Awesome/), jQuery 1.10.2 or later (http://jquery.com/)
 	Author: Joshua Blackwood
-	Copyright: 2013 Joshua Blackwood under the MIT License (http://opensource.org/licenses/MIT)
+	Copyright: 2013-2014 Joshua Blackwood under the MIT License (http://opensource.org/licenses/MIT)
  */
 
 (function($) {
@@ -29,16 +29,17 @@
 		$('body').append(markup);
 
 		var dismiss = $('button[data-dismiss="progress-bar"]'),
-			input = $(this).find('input[required], select[required], textarea[required], input.required, select.required, textarea.required'),
-			magicNumber = 100 / input.length,
-			pbw = $('#progress-bar-wrap');
+        radioSiblings = $(this).find('input[type=radio][required], input[type=radio].required').parents('label').siblings().children('input[type=radio]'),
+			  input = $(this).find('input[required], select[required], textarea[required], input.required, select.required, textarea.required').add(radioSiblings),
+			  magicNumber = 100 / (input.length - radioSiblings.length),
+			  pbw = $('#progress-bar-wrap');
 
 		dismiss.on('click', function() {
 			pbw.toggleClass('collapsed', 300);
 		});
 
 		input.data('progress', '0');
-
+    
 		input.change(function(){
 
 			var $this = $(this),
@@ -54,7 +55,7 @@
 				pbw.show(300);
 			}
 
-			if ($this.not('.dobm, .dobd').val() && hasProgress == '0') {
+			if (hasProgress == '0') {
 				if ($this.attr('name') == siblingName) {
 					siblingInput.data('progress', '1');
 				}
@@ -66,7 +67,7 @@
 				srText.text(updateAVN + '% Complete');
 				$this.data('progress', '1');
 				console.log('AVN is: ' + updateAVN);
-			} else if (! $this.val() && ! $this.is('.dobm, .dobd') ) { // If the field value is emptied, we need to remove that progress.
+			} else if (! $this.val() ) { // If the field value is emptied, we need to remove that progress.
 				$this.data('progress', '0');
 				avnMath = parseFloat(avn) - parseFloat(magicNumber);
 				updateAVN = avnMath.toFixed(2);
