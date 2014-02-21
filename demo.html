@@ -34,16 +34,16 @@
         <p>A simple jQuery progress bar plugin for Bootstrap forms. Please give it a try below.</p>
         <ul>
         	<li>Progress bar only advances when a required (can be HTML5 <code>required</code> attribute or a CSS class of <code>.required</code>) field gains a value</li>
-        	<li>User-declarable progress messages. When calling the script, set breakpoints and messages in JS object format: <pre>$('#sr_form').showProgress({ message: { '10': 'You\'re off to a great start!', '25': 'You\'re doing great so far!', '50': 'You\'re halfway there!', '75': 'Look at that, you\'re nearly done already!', '100': 'All done! Just click &lt;strong&gt;Submit&lt;/strong&gt; to continue!' } });</pre></li>
+        	<li>User-declarable progress messages. When calling the script, set breakpoints and messages in JS object format: <pre>$('#test_form').showProgress({ message: { '10': 'You\'re off to a great start!', '25': 'You\'re doing great so far!', '50': 'You\'re halfway there!', '75': 'Look at that, you\'re nearly done already!', '100': 'All done! Just click &lt;strong&gt;Submit&lt;/strong&gt; to continue!' } });</pre></li>
         	<li>Progress bar is collapsible</li>
         	<li>Fully Section 508 compliant, with appropriate <code>aria</code> attributes and percentage readout for screen readers</li>
         	<li>Can be positioned at top or bottom of screen with <code>{ position: 'bottom' }</code></li>
         </ul>
         <p>Definitely still a work in progress. Please don't hesitate to submit any bugs! There's a lot of little details left to iron out</p>
       </div>
-
+      
       <div>
-      	<form id="sr_form" action="/sapp/contact/selfreferral/index.cfm" method="post" role="form">
+      	<form id="test_form" action="/" method="post" role="form">
 	        <fieldset>
 	            <legend class="section-title">Your Information</legend>
 	            <div class="section row">
@@ -469,7 +469,7 @@
     <script src="assets/js/jq.progress-bar.js"></script>
     <script>
     	$(document).ready(function() {
-			$('#sr_form').showProgress();
+			$('#test_form').showProgress();
 		});
     </script>
   </body>
